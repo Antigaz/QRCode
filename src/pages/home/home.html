@@ -20,7 +20,6 @@
 
   <ion-card *ngIf="createdCode">
     <ngx-qrcode qrc-class = "qr" qrc-element-type="canvas" [qrc-value]="createdCode"></ngx-qrcode>
-    <button ion-button (click)="getImage()">imagen</button>
     <ion-card-content>
       <p>Valeur transformée : {{ createdCode }}</p>
     </ion-card-content>
