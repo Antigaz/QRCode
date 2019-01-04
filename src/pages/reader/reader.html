@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Lecteur QR Code
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-input type="text" placeholder="MY QR Code data" [(ngModel)]="qrData">
+    </ion-input>
+  </ion-item>
+  <button ion-button full icon-left (click)="scanCode()" color="secondary">
+    <ion-icon name="qr-scanner"></ion-icon>Scanner Code
+  </button>
+
+  <ion-card *ngIf="scannedCode">
+    <ion-card-content>
+      Résultat du Scan : {{ scannedCode }}
+    </ion-card-content>
+  </ion-card>
+  <button ion-button (click)="decodeFile()">Read from File</button>
+  <ion-item *ngIf="decoded"><b>Decoded: </b> {{decoded}}</ion-item>
+</ion-content>
